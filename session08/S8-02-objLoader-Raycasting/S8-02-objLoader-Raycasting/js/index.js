@@ -17,16 +17,16 @@ function init() {
   camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 10000 );
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color( 0xffffe0);
+  scene.background = new THREE.Color( 0xf0f0f0 );
 
-  var light = new THREE.DirectionalLight( 0xffffff, 1.1 );
+  var light = new THREE.DirectionalLight( 0xffffff, 1 );
   light.position.set( 1, 1, 1 ).normalize();
   scene.add( light );
+
 
   var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
 
   for (var i=0; i<500; i++){
-
 
   // Model/material loading!
 	var mtlLoader = new THREE.MTLLoader();
@@ -36,7 +36,7 @@ function init() {
 
     var objLoader = new THREE.OBJLoader();
 		objLoader.setMaterials(materials);
-
+//改变obj名字（绿色）
   		objLoader.load("ship.obj", function(mesh){
   			mesh.traverse(function(node){
   				if( node instanceof THREE.Mesh ){
@@ -65,7 +65,8 @@ function init() {
   //stats = new Stats();
   //container.appendChild( stats.dom );
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-  window.addEventListener( 'resize', onWindowResize, false );
+  document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+window.addEventListener( 'resize', onWindowResize, false );
 }
 
 function onWindowResize() {
@@ -78,8 +79,13 @@ function onDocumentMouseMove( event ) {
   event.preventDefault();
   mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
   mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-
+}
+function onDocumentMouseDown( event ) {
+  event.preventDefault();
+  var intersects = raycaster.intersectObjects(objects,true);
+  if( intersects.length > 0){
+    intersects[0].object.material.color.set( Math.random()*0xffffff);
+  }
 }
 
 
@@ -104,7 +110,7 @@ function render() {
   raycaster.setFromCamera( mouse, camera );
   //var intersects = raycaster.intersectObjects( scene.children );
 
-  var intersects = raycaster.intersectObjects( objects, true );
+/*  var intersects = raycaster.intersectObjects( objects, true );
 
   if ( intersects.length > 0 ) {
     if ( INTERSECTED != intersects[ 0 ].object ) {
@@ -116,6 +122,6 @@ function render() {
   } else {
     if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
     INTERSECTED = null;
-  }
+  }*/
   renderer.render( scene, camera );
 }
