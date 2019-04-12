@@ -19,7 +19,7 @@ for (var i = 0; i < eyesNum; i++) {
 		if (mouseY<810) eyes[1].rotation.x = map_range(mouseY, 0, 810, -1.14, -0.25);
 		else eyes[1].rotation.x = map_range(mouseY, 810, window.innerHeight, -0.25, 0);
 
-		if (mouseX<1880) eyes[2].rotation.y = map_range(mouseX, 0, 1650, -1.14, 0);
+		if (mouseX<1650) eyes[2].rotation.y = map_range(mouseX, 0, 1650, -1.14, 0);
 		else eyes[2].rotation.y = map_range(mouseX, 1650, window.innerWidth,0, 0.3 );
 		if (mouseY<900) eyes[2].rotation.x = map_range(mouseY, 0, 900, -1.14, 0);
 		else eyes[2].rotation.x = map_range(mouseY, 900, window.innerHeight, 0, 0.2);
@@ -39,6 +39,8 @@ for (var i = 0; i < eyesNum; i++) {
 	renderer.render( scene, camera );
 }
 ```
-This code converts three-dimensional vectors into two-dimensional coordinates
+This code converts three-dimensional vectors into two-dimensional coordinates.
+
 Final effect
+
 ![S7](https://raw.githubusercontent.com/Arissa0305/DAT505-GitHub/master/Image/S7.png)
