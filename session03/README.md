@@ -100,4 +100,4 @@ function onProgress( xhr ) {
 Loading obj model.
 
 Final effect
-![S7](https://raw.githubusercontent.com/Arissa0305/DAT505-GitHub/master/Image/S3.png)
+![S3](https://raw.githubusercontent.com/Arissa0305/DAT505-GitHub/master/Image/S3.png)
