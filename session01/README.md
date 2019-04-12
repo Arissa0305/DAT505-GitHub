@@ -1,5 +1,11 @@
 ### Session01 ###
 In this session we introduced Three.js.
+### Exercise ###
+```html
+<script src="build/three.js"></script>
+```
+The purpose of this code is to load the library of three.js to web pages.
+
 ```javascript
 var scene, camera, renderer;
 var geometry, material, mesh;
@@ -60,5 +66,7 @@ scene.add(light2);
 }
 ```
 This code creates different geometries, including adding their material, size and color.
+
+![S1](https://raw.githubusercontent.com/Arissa0305/DAT505-GitHub/master/Image/S1.png)
 
 If everything went well you should see [this](https://github.com/Arissa0305/DAT505-GitHub/tree/master/session01).

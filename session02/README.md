@@ -26,7 +26,6 @@ var material3 = new THREE.MeshLambertMaterial({
   opacity: 1
 });
 
-
 var material4 = new THREE.MeshNormalMaterial({shininess: 1});
 
 var material = new THREE.MeshLambertMaterial({
@@ -38,7 +37,6 @@ var material = new THREE.MeshLambertMaterial({
   emissiveIntensity: 1,
   specularMap: null
 });
-
 
 var material6 = new THREE.MeshPhongMaterial({
   color: 0xF3FFE2,
@@ -56,23 +54,18 @@ var material6 = new THREE.MeshPhongMaterial({
   specularMap: null
 });
 
-
-var material6 = new THREE.MeshStandardMaterial({
-  color: 0xF3FFE2,
-  roughness: 0.5,
-  metalness: 0.5
-});
-
-var material7 = new THREE.MeshPhysicalMaterial({
-  color: 0xF3FFE2,
-  roughness: 0,
-  metalness: 0.5,
-  reflectivity: 0.5,
-  clearCoat: 0,
-  claerCoatRoughness: 0
-});
-var material8 = new THREE.MeshNormalMaterial({shininess: 1});
-
-var texture = new THREE.TextureLoader().load( 'texture.gif' );
 ```
 The above code creates different materials and assigns different geometries by changing the name.
+### Homework ###
+```javascript
+var texture = new THREE.TextureLoader().load( 'texture.gif' );
+
+var material2 = new THREE.MeshBasicMaterial( { map: texture } );
+```
+This is my GIF image of texture.
+
+![texture](https://raw.githubusercontent.com/Arissa0305/DAT505-GitHub/master/session02/S2-04-Homework/cheese.gif)
+
+Final effect
+
+![S2](https://raw.githubusercontent.com/Arissa0305/DAT505-GitHub/master/Image/S2.png)
