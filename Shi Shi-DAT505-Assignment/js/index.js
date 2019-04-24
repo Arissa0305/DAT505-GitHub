@@ -289,13 +289,13 @@ this.mesh = new THREE.Object3D();
 // Cube geometry and material
 var geom = new THREE.DodecahedronGeometry(20,0);
 var mat = new THREE.MeshPhongMaterial({	color:0xffffff,});
-// 随机多次复制几何体
+// Random multiple replication of geometry
 var nBlocs = 3+Math.floor(Math.random()*5);
 
 for (var i=0; i<nBlocs; i++ ){
-	//Clone mesh geometry通过复制几何体创建网格
+//Clone mesh geometry
 	var cloud = new THREE.Mesh(geom, mat);
-		//Randomly position each cube 随机设置每个正方体的位置和旋转角度
+//Randomly position each cube
 		cloud.position.x = Math.random()*100+200;
 		cloud.position.y = Math.random()*50+200;
 		cloud.position.z = Math.random()*10-100;
@@ -376,7 +376,7 @@ function drawStarSystem() {
     system2.group.position.set(-100, -80, 0);
     starSystem.add(system2.group);
   }
-
+//Define screen size
 function onResize() {
   width = window.innerWidth;
   height = window.innerHeight;
@@ -384,7 +384,7 @@ function onResize() {
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
 }
-
+//Set the mouse properties
 function onMouseDown(event) {
   mouseDown = true;
 	//Find intersections
@@ -406,7 +406,6 @@ function onTouchStart(event) {
   mouseDown = true;
   if (speed !== 0.1) speed = 0.1;
 }
-
 function onMouseUp(event) {
   mouseDown = false;
 }
@@ -418,7 +417,7 @@ function onTouchEnd(event) {
 function rad(degrees) {
   return degrees * (Math.PI / 180);
 }
-
+//add the animates
 function animate() {
   requestAnimationFrame(animate);
   var delta = clock.getDelta();
@@ -426,8 +425,7 @@ function animate() {
 	render();
   stats.update();
 }
-
-
+//add the render
 function render() {
   const timer = 0.0001 * Date.now();
 
@@ -491,7 +489,7 @@ function render() {
 
   renderer.render(scene, camera);
 }
-
+//Set the material color and shape of the starsystem
 class StarSystem {
   constructor({
     intensity = 5000,
@@ -545,7 +543,7 @@ class StarSystem {
   }
 }
 
-// add music
+// add music with the buttons
 const worldMusic = document.querySelector('.music');
 const btnMusic = document.querySelector('.btn-music');
 
