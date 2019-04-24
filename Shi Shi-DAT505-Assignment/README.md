@@ -30,7 +30,7 @@ Space Travel
 * README.md
 
 #### links ####
-[DAT505-GitHub](https://github.com/Arissa0305/DAT505-GitHub).
+[DAT505-GitHub](https://github.com/Arissa0305/DAT505-GitHub/tree/master/Shi%20Shi-DAT505-Assignment).
 
 ### Effect diagram ###
 ![1](https://raw.githubusercontent.com/Arissa0305/DAT505-GitHub/master/Image/fw1.png)
